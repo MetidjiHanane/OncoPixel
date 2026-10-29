@@ -1,0 +1,20 @@
+# OncoPixel backend. Python 3.10 to 3.13. On Apple Silicon the standard torch wheel includes MPS.
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9
+pydantic>=2.5
+numpy>=1.26
+opencv-python-headless>=4.9
+pillow>=10.2
+scipy>=1.11
+torch>=2.2
+torchvision>=0.17
+timm>=1.0
+segmentation-models-pytorch>=0.3.3
+pydicom>=2.4
+highdicom>=0.22
+nibabel>=5.2
+reportlab>=4.1
+python-docx>=1.1
+cryptography>=42
+keyring>=24

@@ -1,0 +1,46 @@
+# Model weights and training artefacts: NEVER commit these (patient data and IP stay local)
+models/**/*.pt
+models/**/*.pth
+models/**/*.onnx
+models/**/*.ckpt
+models/**/*.safetensors
+models/**/*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Secrets and local data
+vault.key
+*.key
+.env
+.env.*
+*.opbackup
+*.db
+*.db-wal
+*.db-shm
+/data/
+/exports/
+verify-report.json
+
+# Test fixtures (random weights, generated)
+backend/tests/_fixtures/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Node / build
+node_modules/
+desktop/dist/
+desktop/release/
+.vite/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
