@@ -59,7 +59,8 @@ Requirements: macOS, Python 3.10 to 3.13, Node.js 18 or newer.
 Tested on macOS (Apple Silicon) only. Windows and Linux have not been tested.
 
 ```bash
-git clone <your repository> oncopixel && cd oncopixel      # or unzip the project
+git clone https://github.com/MetidjiHanane/OncoPixel oncopixel 
+cd oncopixel      
 ./scripts/setup-mac.sh                                      # venv + Python deps + npm install + build
 ```
 
