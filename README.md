@@ -156,12 +156,12 @@ Three layers, from the file up to the clinic.
 
 1. **The checkpoint itself** (`./scripts/verify-models.sh`). The file is loaded with `weights_only=True`. The expected keys must be present, the class order must be exactly `glioma, meningioma, no_tumor, pituitary`, the network must be built without pre-trained weights and `load_state_dict(strict=True)` must succeed. A forward pass on the selected device (Apple MPS or CPU) must give finite numbers of the right shape. If anything fails, the Models page says why and **no analysis is produced**.
 2. **Every study.** The input is validated (unreadable, tiny, blank or colour images are refused or warned). A study is flagged for human review when the classifier confidence is below the review threshold (90 % by default), when the two models disagree (next section), or when the input is not a T1 slice or is a colour image. A flagged study is never hidden: you see the flag and the reason.
-3. **Comparison with an oncologist (planned).** To evaluate OncoPixel's predictions, the model outputs will be compared with an oncologist's assessments on images not used during training.
+3. **Comparison with oncologists (planned).** To evaluate OncoPixel's predictions, the model outputs will be compared with an oncologists' assessments on images not used during models development.
 
-    - The oncologist will independently label the images without seeing OncoPixel's predictions.
+    - The oncologists will independently label the images without seeing OncoPixel's predictions.
     - The same images will be analyzed using OncoPixel.
-    - Classification results will be compared for each tumor class, and the oncologist's tumor outlines will be compared with the model's segmentation masks.
-    - Disagreements will be reviewed to identify differences between the model's predictions and the oncologist's assessments.
+    - Classification agreement will be measured for each tumor class with Cohen's kappa, and the oncologists' tumor outlines will be compared with the model's segmentation masks with the Dice score (0 = no overlap, 1 = identical outlines).
+    - Disagreements will be reviewed to identify differences between the model's predictions and the oncologists' assessments.
 
    **Status:** This comparison has not been carried out yet, so no clinical performance is claimed. Until it is done and a sufficient number of cases has been evaluated, OncoPixel remains a research prototype.
 
